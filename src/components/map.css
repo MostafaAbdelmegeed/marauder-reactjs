@@ -1,0 +1,14 @@
+.Map-container {
+    flex: 4;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border: 0.1vw solid rgb(117, 117, 117);
+}
+
+.Canvas {
+    height: 28vw;
+    width: 100%;
+    background-image: url('./map.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}

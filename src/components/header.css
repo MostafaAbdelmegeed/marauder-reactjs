@@ -1,0 +1,15 @@
+.Header-container {
+    display: flex;
+    flex-flow: row wrap;
+    height: 8vw;
+    justify-content: center;
+    padding: 0;
+    padding-top: 1vw;
+
+}
+
+
+.Logo {
+    height: 100%;
+}
+

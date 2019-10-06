@@ -1,0 +1,51 @@
+.SideMenu-container {
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1;
+    border-radius: 10%;
+}
+
+.SideMenu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: rgb(78, 104, 219);
+    border-radius: 0% 5% 5% 0%;
+}
+
+.SideMenu-listitem {
+    display: block;
+    height: 2vw;
+    text-align: center;
+    font-size: 1.1vw;
+    padding-top: 1vw;
+    padding-bottom: 0.2vw;
+    background-color: rgb(117, 117, 117);
+    color: white;
+    border-top: 0.1vw solid rgb(68, 68, 68);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.active {
+    color: black;
+}
+
+.SideMenu-listitem:hover {
+    background-color: rgb(82, 113, 253);
+}
+
+.SideMenu-listheader {
+    display: block;
+    font-size: 1.2vw;
+    background-color: #5271fd;
+    color: white;
+    height: 1.8vw;
+    text-align: center;
+    padding-top: 0.5vw;
+    padding-bottom: 0.1vw;
+}
