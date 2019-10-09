@@ -1,15 +1,31 @@
 .Header-container {
     display: flex;
     flex-flow: row wrap;
-    height: 8vw;
+    height: 4vw;
     justify-content: center;
     padding: 0;
-    padding-top: 1vw;
+    padding-top: 0.3vw;
+    padding-bottom: 0.3vw;
+    background-color: #e5e5e5;
+    transition: box-shadow 1s,border-bottom-left-radius 0.5s, border-bottom-right-radius 0.5s, height 1s;
+}
 
+.Header-container:hover {
+    box-shadow: 0vw 0vw 4vw 0vw black;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 8vw;
+}
+
+.Header-container:hover .Logo{
 }
 
 
 .Logo {
     height: 100%;
+}
+
+.Logo:hover {
+    cursor: pointer;
 }
 

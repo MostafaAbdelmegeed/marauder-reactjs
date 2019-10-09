@@ -12,6 +12,8 @@ export default class Map extends Component {
             x: 50,
             y: 50,
             color: "red",
+            ref: "",
+            deviceUrl: "http://localhost:3000/devices/0"
         };
         this.canvasRef = React.createRef();
         this.blink = this.blink.bind(this);
@@ -26,10 +28,9 @@ export default class Map extends Component {
             appId: "1:727437693649:web:b8db5130b87b37433c6bf0",
             measurementId: "G-KYK1N2MGLX"
         };
-        this.deviceurl= "http://localhost:3000/devices/0"
-        this.ref = "";
         this.map = firebase.initializeApp(firebaseConfig);
         this.db = this.map.database().ref().child('node-client');
+
     }
 
     componentWillMount() {
@@ -50,8 +51,8 @@ export default class Map extends Component {
         // Replace hard coded data here with your fetched data!
         this.db.on('value', snapshot => {
             this.setState({
-                x: snapshot.child('dimensions').val().x,
-                y: snapshot.child("dimensions").val().y,
+                x: snapshot.child('dimensions').val().x+2,
+                y: snapshot.child("dimensions").val().y+10,
             })
 
         });
@@ -59,7 +60,7 @@ export default class Map extends Component {
         const canvas = this.canvasRef.current;
         const context = canvas.getContext('2d');
         this.blinking = setInterval(
-            () => this.blink(context, canvas), 200
+            () => this.blink(context, canvas), 100
         );
 
     }
@@ -75,14 +76,14 @@ export default class Map extends Component {
         if (this.state.color === "red") {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.beginPath();
-            context.arc((this.state.x / 100) * canvas.width, (this.state.y / 100) * canvas.height, 1.2, 0, 2 * Math.PI);
+            context.arc((this.state.x / 100) * canvas.width, (this.state.y / 100) * canvas.height, 1.5, 0, 2 * Math.PI);
             context.fillStyle = "#f5f5ec";
             context.fill();
             this.setState({ color: "#f5f5ec" });
         } else {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.beginPath();
-            context.arc((this.state.x / 100) * canvas.width, (this.state.y / 100) * canvas.height, 1.2, 0, 2 * Math.PI);
+            context.arc((this.state.x / 100) * canvas.width, (this.state.y / 100) * canvas.height, 1.5, 0, 2 * Math.PI);
             context.fillStyle = "red";
             context.fill();
             this.setState({ color: "red" });

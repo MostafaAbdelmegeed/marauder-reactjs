@@ -1,8 +1,9 @@
 .Map-container {
+    display: flex;
     flex: 4;
     margin-left: 2vw;
     margin-right: 2vw;
-    border: 0.1vw solid rgb(117, 117, 117);
+    align-items: center;
 }
 
 .Canvas {
@@ -11,4 +12,12 @@
     background-image: url('./map.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: #e5e5e5;
+    border-radius: 25px;
+    transition: box-shadow 0.5s;
+}
+
+.Canvas:hover {
+    box-shadow: 0.5vw 0.5vw 0.5vw 0.5vw black;
+    cursor: pointer;
 }
